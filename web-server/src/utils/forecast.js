@@ -21,10 +21,12 @@ const forecast = (latitude, longitude, callback) => {
             const temperature = body.current.temperature;
             const feelslike = body.current.feelslike;
             const precip = body.current.precip;
+            const wind = body.current.wind_speed;
+            const humidity = body.current.humidity;
 
             callback(
                 undefined, 
-                `${description}. It is currently ${temperature}°F. Feels like ${feelslike}°F. Chance of rain: ${precip}%.`
+                `${description}. It is currently ${temperature}°F. Feels like ${feelslike}°F. Chance of rain: ${precip}%. There are wind speeds of ${wind}. The humidity is ${humidity}%.`
             );
         }
     });

@@ -1,4 +1,7 @@
 
+require('dotenv').config()
+console.log('MAPBOX_TOKEN from app.js:', process.env.MAPBOX_TOKEN)
+
 
 const path = require('path');
 const express = require('express');
