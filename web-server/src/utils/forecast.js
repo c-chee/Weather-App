@@ -1,4 +1,5 @@
 const request = require('request');
+// in terminal - heroku config:set WEATHERSTACK_KEY=pk_xxxxx
 
 const forecast = (latitude, longitude, callback) => {
     const weatherstackKey = process.env.WEATHERSTACK_KEY;

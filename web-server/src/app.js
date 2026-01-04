@@ -1,6 +1,8 @@
 
 require('dotenv').config()
-console.log('MAPBOX_TOKEN from app.js:', process.env.MAPBOX_TOKEN)
+// console.log('MAPBOX_TOKEN from app.js:', process.env.MAPBOX_TOKEN)
+
+// npm run dev
 
 
 const path = require('path');

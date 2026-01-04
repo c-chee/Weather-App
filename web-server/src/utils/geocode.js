@@ -1,4 +1,5 @@
 const request = require('request')
+// in terminal - heroku config:set MAPBOX_TOKEN=pk_xxxxx
 
 // --- Geocoding ---
 // Address -> Lat/Long -> Weather
