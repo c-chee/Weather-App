@@ -12,23 +12,32 @@
     <div class = 'main-content'>
         {{>header}}
 
-        <p>Use this site to get your weather.</p>
+        <section class = 'instructions'>
+            <p>Use this site to get your weather!</p>
+            <p>1. Select your unit, fahrenheit or celsius.</p>
+            <p>2. Input your locaction (City or State).</p>
+            <p>3. Click 'Search' the generate results.</p>
+        </section>
+        
 
         <form>
             {{!-- Button to set unit --}}
             {{!-- default to f --}}
             <label>
-                <input type = 'radio' name = 'unit' value = 'f' checked>
+                <input class = 'temp-unit-radio' type = 'radio' name = 'unit' value = 'f' checked>
                 °F
             </label>
 
             <label>
-                <input type = 'radio' name = 'unit' value = 'm'>
+                <input class = 'temp-unit-radio' type = 'radio' name = 'unit' value = 'm'>
                 °C
             </label>
 
-            <input placeholder = 'Location'>
-            <button>Search</button>
+            <div class = 'searchbar-container'>
+                <input placeholder = 'Location'>
+                <button>Search</button>
+            </div>
+            
         </form>
 
         <p id = 'message-1'></p>

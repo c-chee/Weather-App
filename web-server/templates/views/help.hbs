@@ -11,7 +11,14 @@
 <body>
     <div class = 'main-content'>
         {{>header}}
-        <p>{{helpText}}</p>
+
+        <h3 class = 'page-title'>{{title}}</h3>
+        <section class = 'instructions'>
+            <p>Use this site to get your weather!</p>
+            <p>1. Select your unit, fahrenheit or celsius.</p>
+            <p>2. Input your locaction (City or State).</p>
+            <p>3. Click 'Search' the generate results.</p>
+        </section>
     </div>
     
     {{>footer}}

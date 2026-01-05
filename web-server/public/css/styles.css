@@ -1,40 +1,110 @@
 body {
-    color: #333333;
+    background-color: #E1F3F8;
+    color: #002740;
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 650px;
-    margin: 0 auto; /* Evenly disptributes space left and right */
-    padding: 0 16px;
+
+    margin: 0;
+    min-height: 100vh;
 
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    align-items: center;
 }
 
 .main-content {
+    /* min-width: 650px; */
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 16px;
+
     flex-grow: 1; /* tell the main contetnt to aake all the leftover space */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main-content .instructions {
+    color: #105482;
+    margin-bottom: 2em;
 }
 
 footer {
-    color: #888888;
-    border-top: 1px solid #eeeeee;
+    color: #002740;
+    border-top: 1px solid #42AAE1;
     margin-top: 16px;
-    padding: 16px 0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    min-width: 80vw;
+}
+
+footer section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5em;
+}
+
+.links-container a {
+    color: #105482;
+    text-decoration: none;
+}
+
+.links-container a:hover {
+    cursor: pointer;
+    color: #42AAE1;
+    /* text-decoration: underline; */
 }
 
 header {
-    margin-top: 16px;
-    margin-bottom: 48px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
 h1 {
-    font-size: 64px;
-    margin-bottom: 48px;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    color: #105482;
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-offset: 1em;
+    text-decoration-color: #105482;
 }
 
 header a {
-    color: #888888;
+    color: #002740;
     margin-right: 16px;
     text-decoration: none;
+    font-weight: 400;
+    align-self: center;
+}
+
+header a:hover {
+    cursor: pointer;
+    color: #105482;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
 }
 
 .portrait img {
@@ -42,14 +112,22 @@ header a {
 }
 
 input {
-    border: 1px solid #cccccc;
+    border: 1px solid #002740;
     padding: 8px;
+    border-radius: 3px;
 }
 
 button {
     cursor: pointer;
-    border: 1px solid #888888;
-    background: #888888;
+    border: 1px solid #002740;
+    background: #105482;
+
     color: white;
     padding: 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.temp-unit-radio {
+    margin-bottom: 1.5em;
 }
