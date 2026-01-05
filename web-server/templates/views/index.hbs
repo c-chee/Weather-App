@@ -15,6 +15,18 @@
         <p>Use this site to get your weather.</p>
 
         <form>
+            {{!-- Button to set unit --}}
+            {{!-- default to f --}}
+            <label>
+                <input type = 'radio' name = 'unit' value = 'f' checked>
+                °F
+            </label>
+
+            <label>
+                <input type = 'radio' name = 'unit' value = 'm'>
+                °C
+            </label>
+
             <input placeholder = 'Location'>
             <button>Search</button>
         </form>

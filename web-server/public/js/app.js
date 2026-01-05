@@ -10,10 +10,13 @@ weatherForm.addEventListener('submit', (e) => {
 
     const location = search.value;
 
+    // graab unit
+    const unit = document.querySelector('input[name="unit"]:checked').value;
+
     messageOne.textContent = 'Loading...';
     messageTwo.textContent = '';
 
-    fetch(`/weather?address=${location}`).then((response) => {
+    fetch(`/weather?address=${location}&unit=${unit}`).then((response) => {
         response.json().then((data) => {
             if(data.error) { 
                 console.log(data.error);

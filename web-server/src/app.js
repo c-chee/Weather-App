@@ -3,6 +3,7 @@ require('dotenv').config()
 // console.log('MAPBOX_TOKEN from app.js:', process.env.MAPBOX_TOKEN)
 
 // npm run dev
+// update Git and HeroKu
 
 
 const path = require('path');
@@ -53,30 +54,32 @@ app.get('/help', (req, res) => {
 });
 
 app.get('/weather', (req, res) => {
-    if(!req.query.address) {
-        return res.send({
-            error: 'You must provide an address.'
-        });
+    if (!req.query.address) {
+        return res.send({ error: 'You must provide an address.' })
     }
 
-    geocode(req.query.address, (error, { latitude, longitude, location} = {}) => {
-        if(error) {
-            return res.send({ error });
+    // default to Fahrenheit
+    const unit = req.query.unit || 'f'
+
+    geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
+        if (error) {
+            return res.send({ error })
         }
 
-        forecast(latitude, longitude, (error, forecastData) => {
-            if(error) {
-                return res.send({ error });
+        forecast(latitude, longitude, unit, (error, forecastData) => {
+            if (error) {
+                return res.send({ error })
             }
 
             res.send({
                 forecast: forecastData,
                 location,
                 address: req.query.address
-            });
-        });
-    });
-});
+            })
+        })
+    })
+})
+
 
 app.get('/products', (req, res) => {
     if(!req.query.search) {

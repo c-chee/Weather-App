@@ -1,14 +1,14 @@
 const request = require('request');
 // in terminal - heroku config:set WEATHERSTACK_KEY=pk_xxxxx
 
-const forecast = (latitude, longitude, callback) => {
+const forecast = (latitude, longitude, unit, callback) => {
     const weatherstackKey = process.env.WEATHERSTACK_KEY;
 
     if (!weatherstackKey) {
         return callback('Missing Weatherstack API key. Check your .env file.', undefined);
     }
 
-    const url = `http://api.weatherstack.com/current?access_key=${weatherstackKey}&query=${latitude},${longitude}&units=f`;
+    const url = `http://api.weatherstack.com/current?access_key=${weatherstackKey}&query=${latitude},${longitude}&units=${unit}`;
 
     request({ url, json: true }, (error, { body } = {}) => {
         if (error) {
@@ -25,9 +25,11 @@ const forecast = (latitude, longitude, callback) => {
             const wind = body.current.wind_speed;
             const humidity = body.current.humidity;
 
+            const degree = unit === 'm' ? '°C' : '°F';
+
             callback(
                 undefined, 
-                `${description}. It is currently ${temperature}°F. Feels like ${feelslike}°F. Chance of rain: ${precip}%. There are wind speeds of ${wind}. The humidity is ${humidity}%.`
+                `${description}. It is currently ${temperature}°F. Feels like ${feelslike}${degree}. Chance of rain: ${precip}%. There are wind speeds of ${wind}. The humidity is ${humidity}%.`
             );
         }
     });
