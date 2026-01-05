@@ -9,42 +9,43 @@
     <link rel = 'stylesheet' href = './css/styles.css'>
 </head>
 <body>
-    <div class = 'main-content'>
+    <main>
         {{>header}}
+        <div class = 'main-content'>
 
-        <section class = 'instructions'>
-            <p>Use this site to get your weather!</p>
-            <p>1. Select your unit, fahrenheit or celsius.</p>
-            <p>2. Input your locaction (City or State).</p>
-            <p>3. Click 'Search' the generate results.</p>
-        </section>
-        
-
-        <form>
-            {{!-- Button to set unit --}}
-            {{!-- default to f --}}
-            <label>
-                <input class = 'temp-unit-radio' type = 'radio' name = 'unit' value = 'f' checked>
-                °F
-            </label>
-
-            <label>
-                <input class = 'temp-unit-radio' type = 'radio' name = 'unit' value = 'm'>
-                °C
-            </label>
-
-            <div class = 'searchbar-container'>
-                <input placeholder = 'Location'>
-                <button>Search</button>
-            </div>
+            <section class = 'instructions'>
+                <p>Use this site to get your weather!</p>
+                <p>(Navigate to the help page for specific instructions on how to use.)</p>
+            </section>
             
-        </form>
 
-        <p id = 'message-1'></p>
-        <p id = 'message-2'></p>
-    </div>
+            <form>
+                {{!-- Button to set unit --}}
+                {{!-- default to f --}}
+                <label>
+                    <input class = 'temp-unit-radio' type = 'radio' name = 'unit' value = 'f' checked>
+                    °F
+                </label>
 
-    {{>footer}}
+                <label>
+                    <input class = 'temp-unit-radio' type = 'radio' name = 'unit' value = 'm'>
+                    °C
+                </label>
+
+                <div class = 'searchbar-container'>
+                    <input placeholder = 'Location'>
+                    <button>Search</button>
+                </div>
+                
+            </form>
+
+            <p id = 'message-1'></p>
+            <p id = 'message-2'></p>
+        </div>
+
+        {{>footer}}
+    </main>
+    
 
     <script src = './js/app.js'></script>
 </body>

@@ -9,9 +9,10 @@
     <link rel = 'stylesheet' href = './css/styles.css'>
 </head>
 <body>
-    <div class = 'main-content'>
-        {{>header}}
+    {{>header}}
 
+    <main>
+        <div class = 'main-content'>
         <h3 class = 'page-title'>{{title}}</h3>
         <section class = 'instructions'>
             <p>Use this site to get your weather!</p>
@@ -20,6 +21,7 @@
             <p>3. Click 'Search' the generate results.</p>
         </section>
     </div>
+    </main>
     
     {{>footer}}
 </body>
